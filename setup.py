@@ -7,6 +7,7 @@ setup(
     author_email='yjg30737@gmail.com',
     license='MIT',
     packages=find_packages(),
+    package_data={'pyqt_list_viewer_widget.ico': ['close.svg', 'remove.svg']},
     description='PyQt widget which consist of file list widget and viewer widget',
     url='https://github.com/yjg30737/pyqt-list-viewer-widget.git',
     install_requires=[
