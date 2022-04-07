@@ -68,7 +68,7 @@ class ListViewerWidget(QWidget):
 
     def setExtensions(self, extensions: list):
         self.__extensions = extensions
-        self.__viewerWidget.setExtensionsExceptForImage(extensions)
+        self.__viewerWidget.setExtensions(extensions)
         self.__fileListWidget.setExtensions(extensions)
 
     def setDirectory(self, dirname: str, cur_filename: str = ''):
