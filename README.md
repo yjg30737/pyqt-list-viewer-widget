@@ -7,16 +7,13 @@ PyQt widget which consist two widgets: file list widget and viewer widget
 ## Setup
 `pip3 install git+https://github.com/yjg30737/pyqt-file-list-widget.git --upgrade`
 
-## Detailed Decription
-
-
-### Method Overview
-* `setView(view)`
-* `setExtensions(extensions: list)`
-* `setDirectory(dirname: str, cur_filename: str = '')`
-* `addDirectory(dirname: str, cur_filename: str = '')`
-* `setFilenames(filenames: list, cur_filename: str = '')`
+## Method Overview
+* `setView(view)` - Set the view
+* `setExtensions(extensions: list)` - Set the extensions you want to accept. ex) ['.txt', '.doc']
+* `addDirectory(dirname: str, cur_filename: str = '')` - Add the files in `dirname` directory. Set `cur_filename` argument if you want to make list set current filename.
+* `setDirectory(dirname: str, cur_filename: str = '')` - Clear the list and add the directory.
 * `addFilenames(filenames: list, cur_filename: str = '')`
+* `setFilenames(filenames: list, cur_filename: str = '')`
 * `getListWidget()`
 * `getViewerWidget()`
 * `isAddAsDirectory() -> bool`
