@@ -113,3 +113,6 @@ class FileWidget(QWidget):
     def close(self):
         self.closeSignal.emit()
         super().close()
+
+    def getFileListWidget(self):
+        return self.__fileListWidget

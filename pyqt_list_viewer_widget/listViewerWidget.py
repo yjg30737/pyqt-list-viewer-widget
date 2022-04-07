@@ -101,6 +101,3 @@ class ListViewerWidget(QWidget):
 
     def setWindowTitleBasedOnCurrentFileEnabled(self, f: bool, prefix: str = ''):
         self.__viewerWidget.setWindowTitleBasedOnCurrentFileEnabled(f, prefix)
-
-    def getFileListWidget(self):
-        return self.__fileListWidget
