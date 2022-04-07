@@ -8,7 +8,7 @@ PyQt widget which consist two widgets: file list widget and viewer widget
 `pip3 install git+https://github.com/yjg30737/pyqt-file-list-widget.git --upgrade`
 
 ## Method Overview
-* `setView(view)` - Set the view
+* `setView(view)` - Set the view.
 * `setExtensions(extensions: list)` - Set the extensions you want to accept. ex) ['.txt', '.doc']
 * `addDirectory(dirname: str, cur_filename: str = '')` - Add the files in `dirname` directory. Set `cur_filename` argument if you want to make list set current filename.
 * `setDirectory(dirname: str, cur_filename: str = '')` - Clear the list and add the directory.
@@ -16,9 +16,9 @@ PyQt widget which consist two widgets: file list widget and viewer widget
 * `setFilenames(filenames: list, cur_filename: str = '')`
 * `getListWidget()`
 * `getViewerWidget()`
+* `setAddAsDirectory(f: bool)` - If this is set `True`, adding a file in certain directory is not only add the file itself, but also add the other files.
 * `isAddAsDirectory() -> bool`
-* `setAddAsDirectory(f: bool)`
-* `setWindowTitleBasedOnCurrentFileEnabled(f: bool, prefix: str = '')`
+* `setWindowTitleBasedOnCurrentFileEnabled(f: bool, prefix: str = '')` - If this is set `True` and prefix is being set, window title's format is set like `Prefix - 1.png` -> `Prefix - 2.png` ... 
 
 ## Included Packages
 * <a href="https://github.com/yjg30737/simplePyQt5.git">simplePyQt5</a>
