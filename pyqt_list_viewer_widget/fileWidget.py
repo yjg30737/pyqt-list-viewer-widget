@@ -71,6 +71,14 @@ class FileWidget(QWidget):
     def setCurrentItem(self, idx: int):
         self.__fileListWidget.setCurrentItem(self.__fileListWidget.item(idx))
 
+    def setDirectory(self, dirname: str, cur_filename: str = ''):
+        self.__fileListWidget.setDirectory(dirname, cur_filename)
+        self.__chkToggled()
+
+    def addDirectory(self, dirname: str, cur_filename: str = ''):
+        self.__fileListWidget.addDirectory(dirname, cur_filename)
+        self.__chkToggled()
+
     def setFilenames(self, filenames: list, cur_filename: str = ''):
         self.__fileListWidget.setFilenames(filenames, cur_filename=cur_filename)
         self.__chkToggled()
