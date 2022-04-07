@@ -80,12 +80,10 @@ class ListViewerWidget(QWidget):
         self.addFilenames(filenames, cur_filename)
 
     def setFilenames(self, filenames: list, cur_filename: str = ''):
-        cur_filename = filenames[0] if cur_filename == '' else cur_filename
         self.__viewerWidget.setFilenames(filenames, cur_filename)
         self.__fileListWidget.setFilenames(filenames, cur_filename)
 
     def addFilenames(self, filenames: list, cur_filename: str = ''):
-        cur_filename = filenames[0] if cur_filename == '' else cur_filename
         self.__viewerWidget.addFilenames(filenames, cur_filename)
         self.__fileListWidget.addFilenames(filenames, cur_filename)
 
