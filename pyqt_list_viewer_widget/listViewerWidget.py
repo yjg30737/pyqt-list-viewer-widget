@@ -63,6 +63,9 @@ class ListViewerWidget(QWidget):
         self.__viewerWidget.removeSomeFilesFromViewer(filenames)
         self.__selectCurrentFileItemInList()
 
+    def setView(self, view):
+        self.__viewerWidget.setView(view)
+
     def setExtensions(self, extensions: list):
         self.__extensions = extensions
         self.__viewerWidget.setExtensionsExceptForImage(extensions)
