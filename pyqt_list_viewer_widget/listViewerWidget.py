@@ -72,12 +72,12 @@ class ListViewerWidget(QWidget):
         self.__fileListWidget.setExtensions(extensions)
 
     def setDirectory(self, dirname: str, cur_filename: str = ''):
-        self.addDirectory(dirname, cur_filename)
+        self.__viewerWidget.setDirectory(dirname, cur_filename)
+        self.__fileListWidget.setDirectory(dirname, cur_filename)
 
     def addDirectory(self, dirname: str, cur_filename: str = ''):
-        filenames = [os.path.join(dirname, filename).replace(os.path.sep, posixpath.sep) for filename in
-                     os.listdir(dirname)]
-        self.addFilenames(filenames, cur_filename)
+        self.__viewerWidget.addDirectory(dirname, cur_filename)
+        self.__fileListWidget.addDirectory(dirname, cur_filename)
 
     def setFilenames(self, filenames: list, cur_filename: str = ''):
         self.__viewerWidget.setFilenames(filenames, cur_filename)
