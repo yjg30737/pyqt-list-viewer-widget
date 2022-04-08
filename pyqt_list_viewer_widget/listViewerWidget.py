@@ -25,15 +25,13 @@ class ListViewerWidget(QWidget):
         self.__addAsDirectory = False
 
     def __initUi(self):
-        self.__fileWidget = FileWidget()
-        self.__fileWidget.showSignal.connect(self.__showFileToViewer)
-        self.__fileWidget.removeSignal.connect(self.__removeSomeFilesFromViewer)
+        self.__fileListWidget = FileWidget()
+        self.__fileListWidget.showSignal.connect(self.__showFileToViewer)
+        self.__fileListWidget.removeSignal.connect(self.__removeSomeFilesFromViewer)
 
-        self.__fileWidget.showSignal.connect(self.showSignal)
-        self.__fileWidget.removeSignal.connect(self.removeSignal)
-        self.__fileWidget.closeSignal.connect(self.closeListSignal)
-
-        self.__fileListWidget = self.__fileWidget.getListWidget()
+        self.__fileListWidget.showSignal.connect(self.showSignal)
+        self.__fileListWidget.removeSignal.connect(self.removeSignal)
+        self.__fileListWidget.closeSignal.connect(self.closeListSignal)
 
         self.__viewerWidget = ViewerWidget()
         self.__viewerWidget.prevSignal.connect(self.__selectCurrentFileItemInList)
@@ -44,7 +42,7 @@ class ListViewerWidget(QWidget):
         self.__viewerWidget.closeSignal.connect(self.closeViewerSignal)
 
         splitter = QSplitter()
-        splitter.addWidget(self.__fileWidget)
+        splitter.addWidget(self.__fileListWidget)
         splitter.addWidget(self.__viewerWidget)
         splitter.setSizes([200, 400])
 
@@ -88,9 +86,6 @@ class ListViewerWidget(QWidget):
     def addFilenames(self, filenames: list, cur_filename: str = ''):
         self.__viewerWidget.addFilenames(filenames, cur_filename)
         self.__fileListWidget.addFilenames(filenames, cur_filename)
-
-    def getFileWidget(self):
-        return self.__fileWidget
 
     def getListWidget(self):
         return self.__fileListWidget

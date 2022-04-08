@@ -35,8 +35,17 @@ class FileWidget(QWidget):
         self.__fileListWidget = CheckBoxFileListWidget()
         self.__fileListWidget.checkedSignal.connect(self.__btnToggled)
         self.__fileListWidget.itemDoubleClicked.connect(self.__showSignal)
-        self.__fileListWidget.added.connect(self.__added)
         self.__fileListWidget.itemActivated.connect(self.__showSignal)
+
+        # for not only adding files in general way but also drop the files
+        # todo set files
+        # self.__fileListWidget.setFiles.connect()
+        # todo set files in directory
+        # self.__fileListWidget.setDirectory.connect()
+        # todo added files
+        # self.__fileListWidget.addFiles.connect()
+        # todo added files in directory
+        # self.__fileListWidget.addDirectory.connect()
 
         topWidget = LeftRightWidget()
         topWidget.setLeftWidgets([QLabel('List of files')])
@@ -69,7 +78,29 @@ class FileWidget(QWidget):
         f = len(self.__fileListWidget.getCheckedRows()) > 0
         self.__removeBtn.setEnabled(f)
 
-    def getFilenameFromRow(self, r: int) -> str:
+    def setCurrentItem(self, idx: int):
+        self.__fileListWidget.setCurrentItem(self.__fileListWidget.item(idx))
+
+    def setDirectory(self, dirname: str, cur_filename: str = ''):
+        self.__fileListWidget.setDirectory(dirname, cur_filename)
+        self.__chkToggled()
+
+    def addDirectory(self, dirname: str, cur_filename: str = ''):
+        self.__fileListWidget.addDirectory(dirname, cur_filename)
+        self.__chkToggled()
+
+    def setFilenames(self, filenames: list, cur_filename: str = ''):
+        self.__fileListWidget.setFilenames(filenames, cur_filename=cur_filename)
+        self.__chkToggled()
+
+    def addFilenames(self, filenames: list, cur_filename: str = ''):
+        self.__fileListWidget.addFilenames(filenames, cur_filename=cur_filename)
+        self.__chkToggled()
+
+    def setExtensions(self, extensions: list):
+        self.__fileListWidget.setExtensions(extensions)
+
+    def getFilenameFromRow(self, r: int) -> int:
         return self.__fileListWidget.getFilenameFromRow(r)
 
     def __showSignal(self, item):
@@ -95,7 +126,3 @@ class FileWidget(QWidget):
 
     def getListWidget(self):
         return self.__fileListWidget
-
-    def __added(self):
-        self.__chkToggled()
-        self.__btnToggled()
