@@ -14,8 +14,9 @@ PyQt widget which consist two widgets: file list widget and viewer widget
 * `setDirectory(dirname: str, cur_filename: str = '')` - Clear the list and add the directory.
 * `addFilenames(filenames: list, cur_filename: str = '')`
 * `setFilenames(filenames: list, cur_filename: str = '')`
-* `getListWidget()`
-* `getViewerWidget()`
+* `getFileWidget()` - Return `FileWidget` on the left side of whole widget. 
+* `getListWidget()` - Return `FileListWidget`, list widget containing files placed in the `FileWidget`)
+* `getViewerWidget()` - Return `ViewerWidget` on the right side of whole widget.
 * `setAddAsDirectory(f: bool)` - If this is set `True`, adding a file in certain directory is not only add the file itself, but also add the other files.
 * `isAddAsDirectory() -> bool`
 * `setWindowTitleBasedOnCurrentFileEnabled(f: bool, prefix: str = '')` - If this is set `True` and prefix is being set, window title's format is set like `Prefix - 1.png` -> `Prefix - 2.png` ...
