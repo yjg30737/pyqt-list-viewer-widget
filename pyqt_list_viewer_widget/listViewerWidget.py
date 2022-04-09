@@ -10,7 +10,7 @@ from pyqt_list_viewer_widget.fileWidget import FileWidget
 class ListViewerWidget(QWidget):
     prevSignal = pyqtSignal()
     nextSignal = pyqtSignal()
-    closeViewerSignal = pyqtSignal()
+    closeViewerSignal = pyqtSignal(bool)
 
     showSignal = pyqtSignal(str)
     removeSignal = pyqtSignal(list)
@@ -101,3 +101,6 @@ class ListViewerWidget(QWidget):
 
     def setWindowTitleBasedOnCurrentFileEnabled(self, f: bool, prefix: str = ''):
         self.__viewerWidget.setWindowTitleBasedOnCurrentFileEnabled(f, prefix)
+
+    def setBottomWidgetVisible(self, f: bool):
+        self.__viewerWidget.setBottomWidgetVisible(f)
