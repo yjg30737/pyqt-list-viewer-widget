@@ -20,6 +20,8 @@ PyQt widget which consist two widgets: file list widget and viewer widget
 * `setAddAsDirectory(f: bool)` - If this is set `True`, adding a file in certain directory is not only add the file itself, but also add the other files.
 * `isAddAsDirectory() -> bool`
 * `setWindowTitleBasedOnCurrentFileEnabled(f: bool, prefix: str = '')` - If this is set `True` and prefix is being set, window title's format is set like `Prefix - 1.png` -> `Prefix - 2.png` ...
+* `setBottomWidgetVisible(f: bool)` - Toggle the visibility of bottom widget (navigation widget) of viewer widget.
+* `getCurrentFilename() -> str`
 
 ## Included Packages
 * <a href="https://github.com/yjg30737/simplePyQt5.git">simplePyQt5</a>
