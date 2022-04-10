@@ -8,8 +8,8 @@ from pyqt_list_viewer_widget.fileWidget import FileWidget
 
 
 class ListViewerWidget(QWidget):
-    prevSignal = pyqtSignal()
-    nextSignal = pyqtSignal()
+    prevSignal = pyqtSignal(str)
+    nextSignal = pyqtSignal(str)
     closeViewerSignal = pyqtSignal(bool)
 
     showSignal = pyqtSignal(str)
@@ -51,10 +51,14 @@ class ListViewerWidget(QWidget):
         lay.setContentsMargins(0, 0, 0, 0)
         self.setLayout(lay)
 
-    def __selectCurrentFileItemInList(self):
+    def __selectCurrentFileItemInList(self, filename: str = ''):
         idx = self.__viewerWidget.getCurrentIndex()
         self.__fileListWidget.setCurrentItem(idx)
         self.__viewerWidget.setFocus()
+        if filename:
+            self.showSignal.emit(filename)
+        else:
+            pass
 
     def __showFileToViewer(self, filename: str):
         self.__viewerWidget.setCurrentFilename(filename)
