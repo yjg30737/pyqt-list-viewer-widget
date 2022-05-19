@@ -18,7 +18,7 @@ class FileWidget(QWidget):
         self.__initUi()
 
     def __initUi(self):
-        closeBtn = SvgIconPushButton()
+        closeBtn = SvgButton()
         closeBtn.setIcon('ico/close.svg')
         closeBtn.clicked.connect(self.close)
 
@@ -27,7 +27,7 @@ class FileWidget(QWidget):
         self.__allChkBox = QCheckBox('Check all')
         self.__onlyFileNameChkBox = QCheckBox('Show filename only')
 
-        self.__removeBtn = SvgIconPushButton()
+        self.__removeBtn = SvgButton()
         self.__removeBtn.setIcon('ico/remove.svg')
         self.__removeBtn.setToolTip('Remove')
         self.__removeBtn.clicked.connect(self.__remove)
