@@ -12,9 +12,9 @@ setup(
     url='https://github.com/yjg30737/pyqt-list-viewer-widget.git',
     install_requires=[
         'PyQt5>=5.8',
-        'simplePyQt5 @ git+https://git@github.com/yjg30737/simplePyQt5.git@master',
-        'pyqt-svg-icon-pushbutton @ git+https://git@github.com/yjg30737/pyqt-svg-icon-pushbutton.git@main',
-        'pyqt-checkbox-file-list-widget @ git+https://git@github.com/yjg30737/pyqt-checkbox-file-list-widget.git@main',
-        'pyqt-viewer-widget @ git+https://git@github.com/yjg30737/pyqt-viewer-widget.git@main'
+        'simplePyQt5>=0.0.1',
+        'pyqt-svg-button>=0.0.1',
+        'pyqt-checkbox-file-list-widget>=0.0.1',
+        'pyqt-viewer-widget>=0.0.1'
     ]
 )

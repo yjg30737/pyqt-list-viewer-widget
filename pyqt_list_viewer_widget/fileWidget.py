@@ -2,7 +2,7 @@ from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QWidget, QCheckBox, QLabel
 
 from pyqt_checkbox_file_list_widget.checkBoxFileListWidget import CheckBoxFileListWidget
-from pyqt_svg_icon_pushbutton import SvgIconPushButton
+from pyqt_svg_button import SvgButton
 from simplePyQt5 import VerticalWidget, LeftRightWidget
 from simplePyQt5.topLeftRightWidget import TopLeftRightWidget
 

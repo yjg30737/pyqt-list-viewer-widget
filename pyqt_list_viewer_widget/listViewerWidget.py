@@ -1,5 +1,3 @@
-import os, posixpath
-
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QWidget, QSplitter, QHBoxLayout
 from pyqt_viewer_widget import ViewerWidget

@@ -1,0 +1,4 @@
+simplePyQt5>=0.0.1
+pyqt-svg-button>=0.0.1
+pyqt-checkbox-file-list-widget>=0.0.1
+pyqt-viewer-widget>=0.0.1
