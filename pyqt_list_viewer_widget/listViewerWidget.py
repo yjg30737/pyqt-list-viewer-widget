@@ -43,6 +43,7 @@ class ListViewerWidget(QWidget):
         splitter.addWidget(self.__fileListWidget)
         splitter.addWidget(self.__viewerWidget)
         splitter.setSizes([200, 400])
+        splitter.setChildrenCollapsible(False)
 
         lay = QHBoxLayout()
         lay.addWidget(splitter)
