@@ -44,6 +44,10 @@ class ListViewerWidget(QWidget):
         splitter.addWidget(self.__viewerWidget)
         splitter.setSizes([200, 400])
         splitter.setChildrenCollapsible(False)
+        for i in range(splitter.count()):
+            lay = splitter.widget(i).layout()
+            if splitter.widget(i).layout():
+                lay.setContentsMargins(5, 5, 5, 5)
 
         lay = QHBoxLayout()
         lay.addWidget(splitter)
